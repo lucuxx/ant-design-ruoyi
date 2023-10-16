@@ -1,0 +1,140 @@
+@import '~antd/es/style/themes/index.less';
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 100vh;
+  color: #fff;
+  background: url('/login-bg.png') no-repeat 50%;
+  background-size: cover;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.rightSide {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.form {
+  width: 100%;
+  // width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  .top {
+    text-align: center;
+  }
+
+  .header {
+    height: 44px;
+    line-height: 44px;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .logo {
+    height: 44px;
+    margin-right: 16px;
+    vertical-align: top;
+  }
+
+  .title {
+    position: relative;
+    top: 2px;
+    color: @text-color;
+    font-weight: 700;
+    font-size: 33px;
+    font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  }
+
+  .desc {
+    margin-top: 12px;
+    margin-bottom: 40px;
+    color: @text-color-secondary;
+    font-size: @font-size-base;
+  }
+
+  .main {
+    width: 328px;
+    margin: 0 auto;
+    @media screen and (max-width: @screen-sm) {
+      width: 95%;
+      max-width: 328px;
+    }
+
+    :global {
+      .@{ant-prefix}-tabs-nav-list {
+        margin: auto;
+        font-size: 16px;
+      }
+    }
+
+    .icon {
+      margin-left: 16px;
+      color: @text-color-secondary;
+      font-size: 24px;
+      vertical-align: middle;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: @primary-color;
+      }
+    }
+
+    .other {
+      margin-top: 24px;
+      line-height: 22px;
+      text-align: left;
+      .register {
+        float: right;
+      }
+    }
+
+    .prefixIcon {
+      color: @primary-color;
+      font-size: @font-size-base;
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .leftSide {
+    width: 50%;
+  }
+
+  .rightSide {
+    width: 50%;
+  }
+}
